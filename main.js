@@ -7,9 +7,13 @@ form.addEventListener('submit', function (e) {
     const campoB = document.getElementById('campo-b');
 
     if (campoA.value  < campoB.value ) {
-        alert("Formulario valido")
+        alert("Formulario valido");
+        campoA.value  = '';
+        campoB.value = '';
     } else {
         alert("Formulario invalido");
+        campoA.value  = '';
+        campoB.value = '';
     }
 
 })
