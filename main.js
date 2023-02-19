@@ -5,9 +5,10 @@ let linhas = '';
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
+    
     adicionarlinha();
     atualizaTabela();
-})
+});
 
 function adicionarlinha(){
     const inputNovaTarefa = document.getElementById('nome-tarefa');
@@ -19,7 +20,7 @@ function adicionarlinha(){
         tarefa.push(inputNovaTarefa.value);
 
         let linha = `<tr>`;
-        linha += `<td>${inputNovaTarefa.value}</td>`;
+        linha += `<li>${inputNovaTarefa.value}</li>`;
 
         linhas += linha;
     }
@@ -30,5 +31,4 @@ function adicionarlinha(){
 function atualizaTabela(){
     const corpoTabela = document.querySelector('tbody');
     corpoTabela.innerHTML = linhas
-
 }
