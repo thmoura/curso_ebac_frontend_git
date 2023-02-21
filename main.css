@@ -4,3 +4,11 @@ body{
 form{
     max-width: 780px;
 }
+
+div .botao{
+    padding: 16px 0;
+}
+
+.botao button{
+    width: 780px;
+}
