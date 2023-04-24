@@ -1,34 +1,43 @@
-const form = document.getElementById('form-lista')
-const tarefa = [];
+$(document).ready(function (){
 
-let linhas = '';
+    const form = document.getElementById('form-lista')
+    const tarefa = [];
+    const sublinha = document
 
-form.addEventListener('submit', function(e){
-    e.preventDefault();
-    
-    adicionarlinha();
-    atualizaTabela();
-});
+    let linhas = '';
 
-function adicionarlinha(){
-    const inputNovaTarefa = document.getElementById('nome-tarefa');
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        
+        adicionarlinha();
+        atualizaTabela();
+    });
 
-    if(tarefa.includes(inputNovaTarefa.value)){
-        alert(`A tarefa: ${inputNovaTarefa} já foi cadastrada.`)
+    function adicionarlinha(){
+        const inputNovaTarefa = document.getElementById('nome-tarefa');
+
+        if(tarefa.includes(inputNovaTarefa.value)){
+            alert(`A tarefa: ${inputNovaTarefa} já foi cadastrada.`)
+        }
+        else {
+            tarefa.push(inputNovaTarefa.value);
+
+            let linha = `<tr>`;
+            linha += `<li>${inputNovaTarefa.value}</li>`;
+
+            linhas += linha;
+        }
+
+        inputNovaTarefa.value = '';
     }
-    else {
-        tarefa.push(inputNovaTarefa.value);
 
-        let linha = `<tr>`;
-        linha += `<li>${inputNovaTarefa.value}</li>`;
-
-        linhas += linha;
+    function atualizaTabela(){
+        const corpoTabela = document.querySelector('tbody');
+        corpoTabela.innerHTML = linhas
     }
 
-    inputNovaTarefa.value = '';
-}
+    // $('li').click(function(){
+    //     linhas =  "text-decoration: line-through";
+    // })
 
-function atualizaTabela(){
-    const corpoTabela = document.querySelector('tbody');
-    corpoTabela.innerHTML = linhas
-}
+})

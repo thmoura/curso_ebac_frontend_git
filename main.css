@@ -37,6 +37,9 @@ button{
     cursor: pointer;
 }
 
-table li {
+table {
     max-width: 240px;
+    padding-left: 62px;
+    cursor: pointer;
 }
+
