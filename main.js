@@ -36,8 +36,8 @@ $(document).ready(function (){
         corpoTabela.innerHTML = linhas
     }
 
-    // $('li').click(function(){
-    //     linhas =  "text-decoration: line-through";
-    // })
+    $('li').click(function(){
+        linhas =  "text-decoration: line-through";
+    })
 
 })
