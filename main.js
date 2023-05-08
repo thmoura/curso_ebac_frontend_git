@@ -2,13 +2,12 @@ $(document).ready(function (){
 
     const form = document.getElementById('form-lista')
     const tarefa = [];
-    const sublinha = document
 
     let linhas = '';
 
-    form.addEventListener('submit', function(e){
+    $('form').on('submit', function(e){
         e.preventDefault();
-        
+
         adicionarlinha();
         atualizaTabela();
     });
