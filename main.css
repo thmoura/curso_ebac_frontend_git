@@ -42,9 +42,18 @@ button{
     padding: 0 8px;
 }
 
-table {
+ul {
     max-width: 240px;
     padding-left: 62px;
     cursor: pointer;
+    list-style: none;
 }
+
+.feito{
+    text-decoration: line-through;
+}
+
+/* .ponto{
+    list-style: circle;
+} */
 
