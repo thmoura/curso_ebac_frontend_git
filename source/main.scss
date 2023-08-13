@@ -1,0 +1,71 @@
+@use 'config/reset';
+@use 'sections/product';
+@use 'config/variebles';
+
+body {
+    background-color: variebles.$corPrincipal;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: variebles.$corDeFundo;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+}
+
+.menu {
+    display: flex;
+
+    li {
+        font-weight: bold;
+        margin-left: 24px;
+    }
+
+    li a {
+        color: variebles.$corLi;
+        text-decoration: none;
+    }
+}
+
+section {
+    padding: 56px 0;
+}
+
+@media screen and (max-width: variebles.$mobile) {
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: variebles.$tablet) {
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
