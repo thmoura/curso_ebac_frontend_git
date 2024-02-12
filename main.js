@@ -20,4 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
             repos.innerText = json.public_repos;
             linkElement.href = json.html_url;
         })
+        .catch(function(erro){
+            alert("Ocorreu um erro ao buscar os dados da pagina, tente novamente mais tarde!")
+        })
 })
