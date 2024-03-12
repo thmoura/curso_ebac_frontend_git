@@ -5,10 +5,10 @@ function Animal(familia, especie, nuPatas, sonsEmitidos, nuOlhos) {
     this.sonsEmitidos = sonsEmitidos;
 
     let _nuOlhos = nuOlhos;
-    // let _sonsEmitidos = sonsEmitidos;
+
 
     this.dizFamilia = function() {
-        console.log(this.especie);
+        console.log(this.familia);
     }
 
     this.dizEspecie = function() {
@@ -40,7 +40,7 @@ function Animal(familia, especie, nuPatas, sonsEmitidos, nuOlhos) {
 }
 
 function Cachorro(familia) {
-    Animal.call(this, familia, "PitBull", 4,'auau',2);
+    Animal.call(this, familia,"PitBull", 4,'auau',2);
    
     this.modifica = function() {
         const maisOlhos = this.getNuOlhos();
@@ -49,7 +49,7 @@ function Cachorro(familia) {
 }
 
 function Aranha(familia) {
-    Animal.call(this, familia, "tarantula", 6,'', 8);
+    Animal.call(this, familia,"tarantula", 6,'', 8);
 
     this.modifica = function() {
         const maisOlhos = this.getNuOlhos();
@@ -57,8 +57,18 @@ function Aranha(familia) {
     }
 }
 
-const animalCachoro = new Animal("Canino");
-const animalAranha = new Animal("Araquinidio");
+function Gato(familia) {
+    Animal.call(this, familia, "Siames", 4,'miau', 2);
+
+    this.modifica = function() {
+        const maisOlhos = this.getNuOlhos();
+        this.setNuOlhos(maisOlhos);        
+    }
+}
+
+const animalCachoro = new Cachorro("Canino");
+const animalAranha = new Aranha("Araquinidio");
+const animalGAto = new Gato("Felino");
 
 animalCachoro.dizFamilia();
 animalCachoro.dizEspecie();
@@ -73,3 +83,11 @@ animalAranha.dizNuPatas();
 animalAranha.dizSonsEmitidos();
 animalAranha.modifica();
 console.log(animalAranha.getNuOlhos());
+
+
+animalGAto.dizFamilia();
+animalGAto.dizEspecie();
+animalGAto.dizNuPatas();
+animalGAto.dizSonsEmitidos();
+animalGAto.modifica();
+console.log(animalGAto.getNuOlhos());
